@@ -1,0 +1,112 @@
+\title{Lab 7: Assembly and Testing}
+\author{Engineering 100-950}
+\date{Winter 2020}
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\chead{Written \& Edited by Kitty Ascrizzi and Sarah Redman, Dec. 2019}
+\usepackage{hyperref}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{fancy}
+    
+    \section*{Calendar}
+        \begin{table}[h]
+        \begin{tabular}{lllll}
+        PCBs Arrive & Week of 3/09/20  &  &  &  \\
+        PDR         & Week of 3/16/20 &  &  &  \\
+        Testing     & Week of 3/23/20 &  &  &  \\
+        Go-No Go     & Week of 3/30/20 &  &  &  \\
+        Launch window opens & Week of 4/04/20 &  &  &
+        \end{tabular}
+        \end{table}
+    
+    \section*{General Requirements}
+    \begin{enumerate}
+        \item Total mass less than 1.00 lb
+        \item RBF pin is removable without opening payload or removing it from balloon train
+        \item Payload can be confirmed to be on without opening
+        \item All requirements specified in the SPACE 584 Interface Control Document (ICD)
+    \end{enumerate}
+    
+    \section*{Sensor/Data Requirements}
+    \begin{enumerate}
+        \item Temperature Sensors: Internal and External
+        \item Humidity Sensor: External
+        \item Pressure Sensor: Ambient Atmospheric Pressure
+        \item Accelerometer: X, Y, Z motion of the payload
+        \item GPS: Latitude, Longitude, Altitude, Velocity
+        \item Other sensor(s) needed to answer your science question
+        
+    \end{enumerate}
+    
+    \section*{PDR Requirements}
+    Begin working on your Preliminary Design Review (PDR) presentation as soon as you have received your PCB. You can refer to the Requirements lecture on canvas for more information, especially about creating your Mass Budget. PDR's will be held starting the week of March 16th in lectures and discussion section.
+    \newline
+    \newline
+    Your PDR must include:
+    \begin{enumerate}
+        \item Science Question
+        \item Requirements Description (Flowdown)
+        \item PCB Layout
+        \item Structure Preliminary Design
+        \item RBF Pin Mechanism
+        \item Data Budget
+        \item Mass Budget
+        \item Power Budget
+    \end{enumerate}
+    
+    \section*{Testing Requirements}
+    The last PDRs will happen on March 24. Starting in lab on Tuesday, March 24th, you can begin testing your payloads. Aim to complete the tests in the following order:
+    
+    \subsection*{Power On Test}
+    The payload must be turned on without opening the structure.
+    \newline \newline
+     Once you have finished the structure of your payload and installed your PCB and batteries, you must demonstrate to an IA that you can remove the RBF pin and visually confirm that the payload is on without opening the structure.
+    
+    \subsection*{Data Collection Test}
+    The payload must collect data for 2 hours. \newline \newline
+   Once you have confirmed the ability to turn your payload on, you must leave your box running for 2 hours, printing the data for all sensors to your SD Card. After the test, verify that you can parse the data and plot it. Show an IA your calibrated and plotted sensor data for the full duration of the test. Make sure there are no periods in the middle of the test where your data is gibberish.
+    
+    
+    \subsection*{GPS Test}
+    The payload must accurately track its position for an hour.
+    \newline \newline
+    Once you have verified that data collection works, you must take your payload on a trip. The most popular option is taking the payload on the full Bursley-Baits route, and walk around with the payload. Post trip, plot your GPS data in google maps to demonstrate to an IA that the payload accurately tracked its position for the full duration of the test.
+    
+    \subsection*{Stairs Drop Test}
+    The payload must survive being dropped roughly down a flight of stairs.\newline \newline
+    Once you have verified that data collection works, ask an IA to perform your drop test. The IA will drop the payload down a set of stairs such that the payload hits several steps on the way down.\newline \newline
+    To pass the Stairs Drop Test you must demonstrate:
+    \begin{enumerate}
+        \item Your payload structure did not break and the payload did not come apart
+        \item All of your components (battery, PCB, and all sensors) stayed in place and are intact and functional
+        \item No wires became detached, your battery stayed attached
+    \end{enumerate}
+    
+    \subsection*{Cold Test}
+    The payload must survive in the FXB cold chamber for time period of two to three hours.
+    \newline \newline
+    To sign up for a cold test time slot, you must have passed every other test. Be sure your payload will have fully charged or nearly full batteries for the test. Only one team member must be present to place the payload in the cold chamber and remove it. Arrive 15 minutes early to your test. All testing teams will walk over to the FXB together. All teams starting there test will pull their RBF pin. When the IA opens the chamber door, teams finishing their test will remove their boxes and teams beginning their test will place theirs in the chamber. This must happen quickly. The IA will close the door and start the timer. Teams finishing their test can then show the IA that there payload is still on. To retrieve your payload, meet in the lab 15 minutes before the scheduled end of your test. Be sure the person who picks up the payload has the RBF pin or knows where it is, especially if they are not the person who dropped the payload off. Once you have finished your cold test, take about 30 minutes in the lab to analyze your data and show the IA you have passed according to the criteria below.
+    \newline \newline
+    To pass the cold test you must demonstrate:
+    \begin{enumerate}
+        \item Your payload is still on at the end of the cold test
+        \item Your payload collected and recorded data from all sensors for the duration of the cold test
+        \item Your temperature data follows a reasonable trend
+    \end{enumerate}
+    
+    \section*{Go - No Go Requirements}
+    Your payload must be completely finished before your Go-No Go presentation. Be prepared to present your Go-No Go in your lab section the week of March 30th. Your team must meet all requirements and pass all tests to pass the Go-No Go, and consequently participate in launch. The presentation should include:
+    \begin{enumerate}
+        \item Proof of requirement fulfillment
+        \item Specifics of your design
+        \item All test results
+    \end{enumerate}
+    
+    \section*{Launch}
+    See Lab 8 for information regarding the balloon launch. The launch window will likely open on April 7th, 2020.
+    
+\end{document}
+

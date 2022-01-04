@@ -1,0 +1,31 @@
+\begin{enumerate}
+		\item Why do we never connect to and pass data through the hardware Serial port (labeled as RX/TX or D0/D1) of an Arduino Nano?
+        
+		\item What's faster, the clock speed of the Arduino or the baud rate? What is the clock speed of the Arduino? Explain in detail what this means about how often using the .read() function will return a -1. 
+        
+		\item What does the .available() function do?
+		
+		\item What does the .millis() function do?
+		
+    	\item The Arduino has something known as a serial buffer. This buffer stores the bytes sent from the GPS (or whatever module you're connected with) to the Arduino. It works like a circular buffer. Look up what a circular buffer is (Wikipedia is a great source here), and give a brief definition below (1-2 sentences)
+    	
+        \item Why do we need to set the buffer index to 0 after resetting the buffer?
+        
+        \item Describe what a pointer is and why we might use one in a program (1-2 sentences)
+        
+        \item Describe how we represent strings in C. Explain why we need an array of size 6 to store "Hello", even though Hello is only 5 characters long (1 sentence)
+        
+        \item Answer the following questions relating to \texttt{cstr}.
+        \begin{itemize}
+            \item Describe the differences between \texttt{strchr} and \texttt{strstr}.
+            \item Why do we \textbf{never} change the last character of the GPSDataBuffer to something other than \texttt{``\\0''}?
+            \item For the following \texttt{cstr}, get a pointer to the first newline character and get a pointer to the first occurrence of an S (capital, not lowercase). 
+            
+            \texttt{``We miss Scott Smith dearly.\\n You should join MBuRST and meet Scott.\\n''}
+        \end{itemize}
+        
+        \item How does a GPS use satellite signals to calculate its location? What data does the signal from a GPS satellite carry? How many signals does a GPS need to get a "fix"? Use any resources you have to help answer these questions. (3-5 sentences)
+        
+	\end{enumerate}
+    
+

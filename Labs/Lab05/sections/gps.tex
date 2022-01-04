@@ -1,0 +1,18 @@
+\documentclass[../main.tex]{subfiles}
+
+The wiring and code needed is covered in
+\href{https://www.youtube.com/watch?v=cPrvM4rRVHo&list=PLp2z0IQxLSvnRLMU8Tr3Pw0gq9NoPankb&index=1}{`Arduino
+Lab 5a: GPS Modules, Part 1'}.
+
+\begin{enumerate}
+  \item Connect the GPS to your Arduino. You only need to connect to the GPS's VIN, GND, RX, and TX pins. Designate a SoftwareSerial port to take in data from the RX/TX pins. The GPS takes 5V at its Vin pin.
+
+  \item Test your wiring by creating a new Arduino sketch. Write code that reads from your new SoftwareSerial port using the .read() function. If you aren’t familiar with the .read() function in the SoftwareSerial library, there’s a good reference for it here: \url{https://www.arduino.cc/en/Serial/read}\\
+
+    Output each character to the Serial Monitor. If the .read() function returns a -1, that means that no new characters have been sent since the last reading, so you shouldn't output anything. The baud rate should be 9600 on all ports. Your output might look garbled, like a series of commas with nothing in between them, but that’s simply because your GPS can't collect data indoors. We call this condition "not fixed." Now, take your board outside and see if you can get a GPS fix. This may take up to 10 minutes of waiting outside. Try to stand far away from any buildings to avoid multipath errors. Once you have a fix, your GPS module's red light will start flashing in a different frequency and you should see more dense output on your Serial monitor. Once you get a fix, come back inside.\\
+
+  \item Now, output everything to the OpenLog, and don't use the Serial Monitor at all. You don't need to go back outside to test this, as we'll do that later. \textbf{Save this code, and submit it with your PostLab.}
+
+\end{enumerate}
+
+

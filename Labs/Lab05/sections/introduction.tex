@@ -1,0 +1,21 @@
+\documentclass[../main.tex]{subfiles}
+
+Up until this point, you have been dealing with \textbf{analog sensors} - their only output is a continuous DC voltage that is related to the physical phenomena they measure. However, analog sensors are only a small subset of sensors that exist! In fact, this single output format is rather limiting - we can only express information about one specific parameter of interest. \\
+
+In previous labs, we used the Arduino to write lots of different types of information to the SD Card and Serial monitor. That information was encoded as digital signals. Thus, we've transmitted digital signals in the past, but until today we haven't needed to receive and interpret them. In this lab, we'll use our first \textbf{digital sensor}, the GPS module. This GPS module communicates through the simple UART communications protocol, which we've already covered in previous labs. We'll need the \textbf{SoftwareSerial} library once more, but this time we need a few more of its features. \\
+
+The GPS doesn't really 'measure' any sort of physical quantity. Instead, it receives messages from satellites which are used to generate GPS information packets. These packets are continuously output by the GPS module, even when it doesn't have a proper \textbf{GPS fix}. This sort of continuous output is called \textbf{spewing}. Having a GPS fix means the GPS is reasonably sure about your location on earth, with only a few meters total of potential error. \\
+
+The output of the GPS are formatted as \textbf{NMEA strings}. NMEA strings are simply a predictable way to format the location, altitude, and diagnostic stamps that the GPS provides into messages. These strings are identified by a 5 letter identifier. Here’s a list of all of them:
+
+\begin{center}
+  \url{http://aprs.gids.nl/nmea/}
+\end{center}
+
+We are only (mostly) interested in GPGGA strings, e.g. the lines of output preceded by ``\$GPGGA." This 5 NMEA string organization will become clear as you view the raw output.\\
+
+In the previous lab, we dealt with integrating all of the analog sensors. This was a basic primer in integration, where you had a system that was already functional and you added another sensor and integrated hardware and software. In the first portion of the lab, we will be doing the same with the GPS sensor, except we will be using the LDOs and a battery to achieve complete independence of your system from the computer and power supply. \\
+
+\textbf{IMPORTANT}: This lab is very long, and if improperly planned out, can be very frustrating too. We recommend that a member of the team start working on the MATLAB (or Python) code to write out the Google Maps HTML file right away, while the rest of the team do parts 1 and 2. You can take the sample NMEA strings off of lecture slides to use as a test for your string parsing algorithms. Your MATLAB/Python code must eventually be able to take any number of GPS points and plot them onto a Google Maps HTML file. This system must integrate with how your Arduino code is written. That is, the output of your Arduino should be directly readable into MATLAB and then turned into a Google Maps file. \\
+
+This does NOT mean you should designate one person to do all the code - that would be cruel and unusual, and that's not how we do things around here. Take this time to gather with your team and draw out a plan of attack that uses time efficiently. We recommend dedicating a minimum of one person to assembling and testing the breadboard, two people to writing the GPS code, and one person writing the HTML plotting code. 

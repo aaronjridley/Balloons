@@ -1,0 +1,42 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{enumerate}
+  \item With the GPS and all the other sensors we've looked at thus far connected, and the system running on it’s own independent power source, you have in front of you a completed sensor board. Take a moment to pat yourself on the back.
+
+    \begin{center}
+      \textit{How does it feel to have something free from the USB port? Pretty good, right? Yeah, we know.}
+    \end{center}
+
+  \item After watching our video
+    \href{https://www.youtube.com/watch?v=KS2mlpPaEUw&list=PLp2z0IQxLSvnRLMU8Tr3Pw0gq9NoPankb&index=2}{`Arduino
+    Lab: 5b: GPS Modules, part 2'},
+      \href{https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/hands-on-engineering/labs/tree/master/gps/starter_files}{download the starter files.} 
+
+  \item Rename `gps.starter` to `gps.ino` so you can open it in Arduino IDE.
+
+  \item Complete the starter code tasks where comments indicate. The comments look like this:	% // TASK #: Description of task. 
+    %\\
+    %\\
+    Read the \textbf{README.md} document that comes with the files for an in depth description of each task.
+
+  \item When completing Task 5, you can choose how to encode you information in the logger. You can print the complete GPGGA string to the OpenLog and do all of your processing in MATALB or Python, or you can do some amount of processing in Arduino and write that to the OpenLog. Any way you choose is fine, as long as you get the data from the GPS to some program on your computer that can make some type of plots. The only processing we specifically require to be done on the Arduino is the isolation of GPGGA strings.
+
+
+  \item Walk around the perimeter of the CSRB and the parking lot. The GPS will
+    start receiving data (a `fix') when the the LED marked `FIX' on it stops
+    blinking frequently. Record your output into a log file.  It could take up
+    to 10 minutes to get a fix.  Make sure to walk far away from buildings and
+    other sources of multipath error. \textbf{Save a working version of this
+    program to submit with your PostLab. This is the second piece of
+  Arduino code you'll need to submit.}
+
+  \item Translate your coordinates into HTML/Google Maps format using the examples posted during lecture and MATLAB (or Python).
+\end{enumerate}
+
+A few things to remember:
+\begin{itemize}
+  \item Debugging while only writing out to the SD card is a big pain! Change your code to write out to the serial port so you can see what is going on and debug it.  Once you have it working, then put it back to the SD card. You could make a boolean variable to switch back and forth, if you wanted.
+
+  \item Make sure the code you have uploaded is your final version before you begin testing. There should be a small button on your Arduino that will ``reset" the code once you power it, so if you disconnect from your computer and connect to the LDO and press the button the code should start from void setup().
+\end{itemize}
+

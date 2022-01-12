@@ -1,13 +1,14 @@
-\title{Lab 1: Intro to Arduinos \& Programming}
-\author{Engineering 100-960/70}
-\date{Fall 2020}
+\title{Lab 1: Arduinos \& LEDs}
+\author{Engineering 100-950}
+\date{Winter 2022}
 \documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{circuitikz}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
-\chead{Written \& Edited by }
+\chead{Written \& Edited by Arun Nagpal, Sarah Redman, Scott Smith, Kitty Ascrizzi,\\
+Grace Ochs, Camber Hortop, Jessica Fisher, Aaron Ridley}
 \usepackage{hyperref}
 
 \begin{document}
@@ -16,125 +17,182 @@
 	
 	\section*{Materials}
 	\begin{itemize}
-		\item 1 \quad Arduino NANO 33 BLE Sense and cable
-		\item 9 \quad LEDs (any color)
-		\item 1 \quad 2-k$\Omega$ Resistor
+		\item 1 \quad Arduino Nano 33 BLE
+		\item 9 \quad LEDs
+		\item 3 \quad 1-k$\Omega$ Resistors
+		\item 3 \quad 2-k$\Omega$ Resistors
+		\item 3 \quad 7.5-k$\Omega$ Resistors
+		\item 3 \quad 10-k$\Omega$ Resistors
 	\end{itemize}
+	
+	\section*{YouTube Video}
+	\href{https://www.youtube.com/playlist?list=PLp2z0IQxLSvkKL0vEaFtbyeb6julsa3-8}{Feel free to watch the YouTube playlist at this link (Click Here). It should help you better understand LED circuits and basic Arduino programming.}
 	
 	\section*{Introduction}
-	Welcome to the first lab of Engineering 100! In the initial labs in this course, we will focus on building technical understanding and skills in the areas of electronics, programming, and sensing. Our objective is for this knowledge to empower you for the design aspects of this course, as well as future courses in Michigan Engineering. To learn these fundamentals in the context of a project, you’ll be building a weather station that can measure temperature, relative humidity, and pressure.\newline
-	
-	The objective of lab 1 is learn how to power and command your Arduino. This entails some circuit building and some programming, but as you may have gathered from the pre-lab module, we’ll mostly focus on programming today. Next week, you’ll get a proper introduction to circuits. In the meantime, follow along with the lab manual, do not get discouraged, and DO ask the IAs what questions you have. They are here to help you learn and explore what piques your interest! 
-
-	\section*{Pre-Lab Activities}
-	FIXME: Reference the to the module (if this is even necessary)
-	
-	\section*{TINKERCAD Version}
-    If you have not yet received your kit in the mail, this lab may be completed virtually, for up to full credit, using a circuit simulator in TINKERCAD. The TINKERCAD version of this lab manual can be found FIXME and covers the same concepts and activities as this manual.
-
-	\section*{In-Lab Activities}
-	
-
-	\subsection*{The Breadboard}
-    Before we build any circuits, it’s important to understand the tools that you are working with. A breadboard is like an engineer’s canvas when it comes to creating circuits. Notice that your breadboard has enumerated rows and columns. As you can see in Figure 1, underneath that plastic grid, those rows and columns are actually strips of metal. Two electrical components that are inserted into the same row or column on a breadboard will be \textbf{electrically connected}. This means that if, for instance, you connect a 5V battery to a given hole, all of the holes in that row have a voltage of 5V. In this way, devices can be chained together to create complex circuits. If you want to read more, feel free to check out this crash course on breadboards here: \url{https://www.makeuseof.com/tag/what-is-breadboard/}\newline
-    	
-    \begin{figure}[h!]
-    	    \begin{center}
-			\includegraphics[width=\linewidth]{Figures/breadboard_annotated_670-1.jpg}
-			\includegraphics[width=\linewidth]{Figures/breadboard_back_peel_670.jpg}
-			\caption{A breadboard, annotated (above) and with the plastic cover removed (below).\newline  \href{https://www.makeuseof.com/tag/what-is-breadboard/}{Credit: Makeuseof.com}}
-		\end{center}
-    	\end{figure}
-    	
-    The little legs on the Arduino are called \textbf{headers}, which are metal pins that can be inserted into the breadboard. The LEDs and resistors that you’ll use today are also made in a form that can be used with a breadboard. You'll be building the circuit show in Figure 2 momentarily. \newline
-    	
-    \begin{figure}[h!]
-    	   **TODO: insert schematic and/or pic here of a single LED, resistor, and arduino set up on a breadboard**
-    	   \caption{LED circuit to be built}
-    \end{figure}
-    	
-    Pause and check-in with your group. What questions do you have about breadboards? What do you think an advantage is of prototyping with a breadboard is? Even if you have not worked with electronics before, can you think of any disadvantages?
-    	
-    \subsection*{Arduino Blink}
-    Let’s try making first contact with the Arduino!
-    \begin{enumerate}
-	
-	\item Insert the Arduino into the breadboard as you see in Figure 2. Don't add the LED and resistor just yet. Notice how it sits over the gap between the two columns on the breadboard. This positioning is intentional - if we placed the Arduino on one side of the breadboard, we would be electrically connecting pins on either side of the device. We don't know what this would do, and we want to make room to plug in other electronic devices, so as a result we place the Arduino in the center of the breadboard.
-		    
-	\item Turn on the Arduino by plugging in the micro USB cable into the device and the USB cable into your computer. Note that an LED built into the device should begin glowing. 
-		    
-    \item Load the Arduino Blink sketch in your IDE (sketch = nickname for an Arduino program).
-    \begin{enumerate}
-    	\item If you downloaded the Arduino Integrated Development Environment (IDE), first specify the Arduino model that you are working with by navigating to Tools $\rightarrow$ Board $\rightarrow$ Arduino Nano 33 BLE. Now, go to File $\rightarrow$ Examples $\rightarrow$ Basics $\rightarrow$ Blink.
-        		    
-        \item If you are using the Arduino Web Editor, first specify the Arduino model that you are working with by navigating to the dropdown menu labeled \textbf{Select Other Board \& Port}. Search and select \textbf{Arduino Nano 33 BLE}. Now, look to the left hand side and navigate to Examples $\rightarrow$ Basics $\rightarrow$ Blink.
-    \end{enumerate}
-    	        
-    \item A new window should open up, with some code in it. In the lefthand corner of that window, click the checkmark to \textbf{compile} the program, and then click the arrow to \textbf{upload} the compiled program to the Arduino. Observe what happens on your Arduino.
-    	 
-    \textbf{ Troubleshooting:} If another LED on your Arduino does not begin blinking, try adjusting these settings, and then ask an IA:
+    Welcome to ENGR100-950! Over the course of the next semester, you will be designing and building your own circuit board, complete with measurement instruments to gather information on all sorts of atmospheric data. To get to that point, we will spend the first couple labs learning about various components and eventually how to combine them into a cohesive system.\\
     
+	In lecture, you've had a crash course on the ins and outs of microcontrollers. Now, you'll be working with your own \textbf{Arduino Nano 33 BLE} microcontroller so you can begin to learn how to use it. The Nano will be the brain of your payload; it is very well-suited to these sorts of applications, as you will see.\\
+	
+	The \textbf{input/output (IO) pins} on the Nano each serve different purposes. On the next page, there's a helpful diagram that details the types of pins on the board.\\
+	
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics[scale=0.5]{Figures/nano33ble-pinout.png}
+			\caption{Photo Credit: forum.arduino.cc}
+		\end{center}
+	\end{figure}
+
+	In general, the digital pins are on one side (D2-13), and the analog pins are on the other (A0 - A7). Digital pins only read and write binary values - HIGH (5V) or LOW (0V). Analog pins can also write these binary values. However, analog pins can read more than just binary values. They read a range of analog values from 0V - 5V. An analog pin reads the voltage that it `sees' on the circuit or sensor you connect it to. \\
+
+	Finally, it's worth noting the GND pin. Voltage values are read with respect to some constant reference. They are \textbf{relative}, not \textbf{absolute}. This reference is usually called 'Ground.' There should ALWAYS be a ground connection on every circuit you make, whether you are using a microcontroller or not. This is essential when dealing with electricity, to make sure that things don't spark or get fried because they draw too much power.\\
+
+	To illustrate, consider the simple LED circuit shown in Figure 2, where a 5V supply powers a bulb, which is attached to GND. The two circuits shown in Figure 2 are actually equivalent representations of the same thing. In the circuit on the left, the 5-volt battery raises the top half of the loop 5 volts higher than the bottom half. The bottom half of the loop is held at zero volts, since it is grounded. Current flows clockwise from the positive (top) to the negative (bottom) terminals of the battery.\\
+    
+    	\begin{figure}[h]
+		\begin{center}
+			\begin{circuitikz} \draw
+				% First circuit
+				(0, 0)	to [battery1, label={5V Batt.}]	(0,4) 
+				(0, 4)	-- (4, 4)
+				(4, 4)	to [full led, *-*]	
+				(4, 0) -- (0, 0)
+				(2, 0)	node[ground, label={[label distance=0.8cm]below:GND}]{}
+				% Second circuit
+				(7, 0)	node[ground, label={[label distance=0.8cm]below:GND}]{}
+				(7, 4)	to [full led, o-*]	(7, 0)
+				(7, 4)	node[label={above:5V}]{}
+				;
+			\end{circuitikz}
+		\end{center}
+		\caption{A simple circuit powering an LED}
+	\end{figure}
+	
+	In the circuit on the right, the top node is held at 5V by some unseen source, and the bottom is held at 0V because it is grounded. The current flows down, into the grounded node. This representation works great if you want to analyze a fragment from a larger circuit.
+	
+	\section{The Breadboard}
+	
+	Before actually launching into the building of circuits, it's important to understand the tools that you are working with. Your breadboard will act as the `circuit board' on which you build your systems. Notice that it is organized by enumerated rows and columns. \\
+	
+	The pins of the electronic devices go into the holes in the breadboard. These holes are related to each other in that every row of 5, as defined on the board, are electrically connected. This means that if, for instance, you connect a 5V battery to a given hole, all of the holes in that row are raised to 5V. \\
+	
+	Circuit elements are connected in breadboards by connecting the input pins of one device to the same row as the output pins of another device. In this way, devices can be chained together to create complex circuits. An example is shown below (Fig. 3). This circuit is called a voltage divider, and consists of two resistors connected end to end. A formal circuit diagram of a voltage divider is shown later in this manual (Fig. 5). \\
+	
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=\linewidth]{Figures/voltagedivider.png}
+			\caption{Photo Credit: electroschematics.com}
+		\end{center}
+		\begin{center}
+			\begin{circuitikz} \draw
+				(0, 4)	node[label={above:$V_{in}$}]{}
+				(0, 4)	to [R, o-*, label={2-k$\Omega$}]	(0, 2)
+				(0, 2)	to [full led, *-*]	(0, 0)
+				(0, 0)	node[ground, label={[label distance=0.8cm]below:GND}]{}
+				;
+			\end{circuitikz}
+		\end{center}
+		\caption{LED circuit to be built, use the Arduino 5V pin for $V_{in}$}
+	\end{figure}
+	
+	Your lab instructors will demonstrate using a breadboard before the lab begins. If you have questions about whether or not you are connecting devices appropriately, please don`t hesitate to ask.
+	
+	\begin{enumerate}
+		
+		\item Ensure that either your computer or your partner's computer has a USB-A port.
+		
+		\item Build the LED circuit shown in Fig. 4. When built, it should look similar to the voltage divider circuit in Fig. 3, except one of the resistors will now be an LED. Be aware that LEDs only turn on when placed in your circuit in the correct orientation. Try switching the orientation of your LED if it doesn't turn on after completing step 2.
+		(hint: one leg is longer than the other!)
+		
+		\item Turn on the Arduino by plugging in the micro USB cord into the device and the USB into the computer. Note that an LED built into the microcontroller should begin glowing. The LED you connected to the Arduino should also begin to glow if your circuit is correct.
+	\end{enumerate}
+	
+	\section{LED Blink}
+	\begin{enumerate}
+		
+		\item Let’s run some example scripts. Open up the Arduino Integrated Development Environment (IDE) on your computer or through CAEN Virtual Sites and go to File $\rightarrow$ Examples $\rightarrow$ Basics $\rightarrow$ Blink. A new window should open up, with some code on it. (Make sure to set the proper microcontroller and processor under the Tools menu). Upload and run the code, and observe what happens.
+	
+		\item Change your code so that the LED that turns on and off is the external one, not the built-in one. You'll need to connect your LED to a digital pin instead of the 5V pin. Don't forget to initialize the digital pin in setup(). Test it and make sure it works. 
+		
+		{\raggedright{}Save your code and rename it to something more recognizable. It will be prudent to create a new folder on the computer to store these scripts for easy recollection later. You will be submitting this program, so make sure to keep it.}
+	
+		\item Copy your code to a new page, and alter it so that the LED is on for 2 seconds and off for half a second, but after every 5 cycles of this, it 'rests' by turning off for 5 seconds. Do this in only 2 additional lines. Keep this code, as it is the second file you will be submitting later.
+	
+		\item Connect 8 more LEDs to the Arduino digital out pins and ground them with one resistor. Write a new Arduino script to approximate the behavior of the light in the beginning of the video below (so that the light shifts left and right at a constant speed). Try to write this program with less than 20 lines in loop. If you're a "Knight Rider" fan, come tell your instructors for brownie points. Make sure to save this code, as you will be submitting it. You should have three separate programs saved so far. \\ (\url{https://www.youtube.com/watch?v=FpyKlLuLbcs})
+	\end{enumerate}
+	
+	\section{Voltage Divider}
+	Consider a \textbf{voltage divider} shown below. The output voltage is related to the input voltage through the equation
+	$$ V_{out} = \frac{R_{2}}{R_1 + R_2} V_{in} $$
+	\begin{figure}[h]
+		\begin{center}
+			\begin{circuitikz} \draw
+				(0, 4)	node[label={above:$V_{in}$}]{}
+				(0, 4)	to [R, o-*, label={$R_1$}]	(0, 2)
+				(0, 2)	to [short, -o]				(2, 2)
+				(2, 2)	node[label={above:$V_{out}$}]{}
+				(0, 2)	to [R, *-*, label={$R_2$}]	(0, 0)
+				(0, 0)	node[ground, label={[label distance=0.8cm]below:GND}]{}
+				;
+			\end{circuitikz}
+		\end{center}
+		\caption{A generic voltage divider}
+	\end{figure}
+	Note the order of the resistors - getting them confused will lead you to the wrong value. The concept of the voltage divider can be extended to any number of resistors. The output voltage at each node is simply the total resistance below that node divided by the total resistance of the circuit. As you might have guessed from the formula, when resistances are placed \textbf{in-series} like so, their resistances add. Make sure you understand the concept, you'll need it for future labs.
+
+	\begin{enumerate}
+        \item Disassemble any circuits you have from the previous parts of the lab. Plug a wire directly from the 5V line of the Arduino into A2 of the Arduino. Create a new Arduino program and use the analogRead() function to read in the voltage. Look up how Serial works for Arduino to write this program. The specifics can be found online, but first you need to initiate communications between the Arduino and your computer using Serial.begin(9600). The 9600 specifies the baud rate, and lets the Arduino know how fast to send data to the computer. Serial.print(dataHere) prints dataHere. The variable dataHere can be data of many types, including integers, doubles, and character arrays. To see the data sent from the Arduino to the computer, open the Serial monitor inside of the Arduino IDE. This can be done by clicking the magnifying glass in the top, left-hand corner of the IDE. At the bottom of the Serial monitor, make sure the baud rate is set at 9600 to match the Arduino. Record the value returned by analogRead(), as you'll need it later.
+        
+    	\item Build a voltage divider by setting $V_{in}$ as the 5V line of the Arduino, have $R_1$ be 2$k\Omega$ and $R_2$ be 2$k\Omega$. Plug $V_{out}$ into A1 of the Arduino.  Use the analogRead() function to read in the voltage and record the raw number that the function returns.
+    
+        Try playing with various resistor values, and take down the values from two more combinations of resistors. Make sure to write down the resistor combinations as well as the analog output for both of your additional experiments.
+        
+		\item Come up with a combination of resistors that will result in an output voltage of less than 1.25V. You can convert the raw output from analogRead() into voltage values by multiplying by 5/1024. You will learn why in next week's lab! Try it and see if it works. Now answer post lab question 1. Save this code, as it will be the fourth script that you submit.
+		
+        \item Write a script that turns on the LED if the voltage seen on A1 is 1.25V, but leaves it off otherwise. Test it with various combinations of resistors. You may have to add some ''wiggle room,'' (error margin), in your code around 5 mV. In addition, you may have to use more than 2 resistors. Remember that the resistance of resistors in series add. Save this code, as you will be submitting it. This should be your fifth and final coding file that you will submit. Now answer post lab question 2.
+	\end{enumerate}
+
+	\section*{Post Lab Questions}
+	For this lab, you and your partner may discuss the questions but must submit unique answers to the post lab questions. 
+	
+	\begin{enumerate}
+	    \item What combination of resistors did you use to get to less than 1.25V at the analog pin in step 3.3? Draw them in a circuit so it's clear where you put the resistors. You can draw it however you'd like as long as it is clear. What value will analogRead() return if it were to be used to measure a voltage of 1.25V?
+	    
+	    \item Draw the circuit you used to get to a value of approximately 1.25V in step 3.4. Make sure to label the values of the resistors you used in the diagram.
+	    
+	    \item What is a major difference between the digital and analog pins on the Arduino Nano?
+	    
+	    \item State the importance of having a ground (GND) in any circuit.
+	    
+		\item What does the pinMode() command do? Why is it necessary in the Blink.ino file? Read the documentation on the digital pins, and ask us questions if you have them. Use your favorite search engine to find the website!
+		
+		\item Describe your additions to the Blink.ino file in order for it to perform to the constraints defined in part 2.3.
+		
+		% \item Redraw the circuit diagram of the voltage divider from Figure 5 in the form of the leftmost 'looped' circuit like in Figure 2.
+		
+        \item Why are the voltage values returned the way they are by analogRead() (i.e. not standard voltage values)? Try reading about analogRead() on the Arduino forums. 
+        
+        % \item Plot, by hand or in MATLAB, the values returned by analogRead() and their corresponding calculated voltage by using the voltage divider equation for the data collected in 3.1, 3.2, and 3.3. Include the plot in your response. How are these data points related? It's likely there is some slight deviation from what you would expect. Why might there be this deviation (if you don't have any deviation, come up with reasons that could cause some)? Describe an equation that maps from analogRead() values directly to voltage and explain your reasoning.
+        
+		\item Using three resistors, draw a voltage divider circuit with two $V_{out}s$. $V_{out1}$ should be equal to 2/3 * $V_{in}$, and $V_{out2}$ should be equal to  1/3 * $V_{in}$. Draw the circuit in both styles as described by Figure 2. Give possible values those resistors could take. What would happen if we doubled the value of all of the resistors? 
+		
+		\item Can you build a voltage divider that produces an output that is higher than the input voltage? Why or why not?
+		
+		%\item A different microcontroller has an 8-bit analog to digital converter (ADC). It also measures values between 0 and 5V. If 5V is put into the ADC, what value would we see at the output?
+		
+	   	% \item Look up what baud rate means on the Arduino website. You can find this information under the info for Serial.begin(). What are the units? Convert a baud rate of 9600 into units of bytes/minute. 
+	\end{enumerate}
+
+    %\newpage
+    
+    \section*{Documentation}
+    On Canvas, turn in the following files. Your answers to the post lab questions must be your own work, but the Arduino scripts may be the same as your partner's.
     \begin{enumerate}
-        \item If you downloaded the Arduino IDE, go to Tools $\rightarrow$ Port and select a different USB port on your computer, then re-upload the program. Try this on all available ports.
-        \item If you are using the Arduino Web Editor, go to \textbf{Select Other Board \& Port} and select a different port for the Arduino Nano 33 BLE.
-    	   \end{enumerate}
-	   
+        \item A PDF document that contains answers to the post lab questions.
+        \item The modified LED Blink script (.ino) from 2.2.
+        \item The further modified LED Blink script (.ino) from 2.3.
+        \item The Knight Rider script (.ino) from 2.4.
+        \item The script (.ino) used to test different resistor combinations for a voltage divider from 3.1-3.3.
+        \item The script (.ino) to turn on the LED if the voltage on A1 was 1.25V from 3.4.
     \end{enumerate}
-        
-    \subsection*{Arduino Programming Basics}
-    Let's walk through the elements of the Arduino Blink sketch that you just ran. Every Arduino sketch consists of two functions: \verb|setup()| and \verb|loop()|. Try opening a new Arduino sketch (File $\rightarrow$ New) and you’ll notice that these functions are always provided to you as the starting point. 
-        
-    \begin{itemize}
-    \item The \verb|setup()| function runs once when you upload a sketch to the Arduino, power the board, and/or press reset (see if you can find the reset button on your Arduino).
-        
-            \item The \verb|loop()| function runs “over and over again forever” – or at least until you upload different code or remove it from its power source.
-        \end{itemize}
-
-        The Arduino stores the most recent program that has been uploaded to it in it’s memory. See this for yourself by unplugging the Arduino from your computer, plugging it back in, and watching it restart the activities from the Blink sketch Even though you can't see it happening on the hardware, the Arduino ran the \verb|setup()| function once and then proceeded to continuously run the \verb|loop()| function .\newline
-        
-        Pause here and discuss with your partner(s): In an Arduino sketch, what kinds of actions belong in a \verb|setup()| function versus a \verb|loop()| function?\newline
-        
-        The last bit of the Arduino IDE that should be highlighted is the black box at the bottom of the window known as the \textbf{terminal}. By now you've already seen a success message appear after the Blink sketch. Perhaps while getting that sketch to run, you saw some error messages in the terminal as well. Although at first glance the error messages can be nasty, they can be \textit{very} useful when debugging. Other programmers have crafted these messages to help you figure out what has gone wrong in your program. When you don't know where to begin, try pasting that error into your favorite search engine. There's a decent chance that you aren't the first one to encounter this error! 
-
-       \subsection*{Arduino Documentation}
-       As stated in the prelab, Arduino refers to a company that manufactures open-source electronics and the community of people that provide ways to use those electronics (website link here).\newline 
-
-        The Arduino IDE provides a wide range of functions that can be used in your Arduino programs. All of these functions are documented on the Arduino website. Reading documentation to understand and use something made by someone else is a really important skill in engineering. Look up \verb|pinMode()|, \verb|digitalWrite()|, and \verb|delay()| on your favorite search engine and read the documentation. Between looking up functions, discuss how these functions are used in the Arduino Blink program. 
-
-        
-	   \subsection*{LED Blink}
-	   Now we'll see how we can control an external LED using an Arduino.
-	   \begin{enumerate}
-        	\item Unplug your Arduino from your computer. It is good practice to never manipulate a circuit while power is being supplied to it.
-        	\item Build the LED circuit shown in Figure 2. 
-        	
-        	\item Plug your Arduino back into your computer. 
-        	
-        	\item Notice that only the Arduino’s built-in LED is blinking. Let’s add some code to the Blink sketch so that both the Arduino’s LED and this new LED cooperate. Look at your circuit. Following the picture, you should have connected the LED to one of the Arduino’s 14 \textbf{digital} pins, which are labelled D1-D14. Figure out which digital pin your LED is connected to, and then add a line of code in the \verb|setup()| function to initialize the LED using the command \verb|pinMode(<Your pin number>, OUTPUT)|;
-        	
-        	\item Follow the same logic to add lines of \verb|digitalWrite()| for this additional LED to the \verb|loop()| function of your program.
-        	
-        	\item Test this code and make sure that both LEDs blink. Be aware that LEDs only turn on when placed in your circuit in the correct orientation. Try switching the orientation of your LED if it doesn't turn on at this point. Take note that one leg of the LED is longer than the other. This can help you remember the proper orientation in the future.
-        	
-        	\item Save your code and rename it to something more recognizable. It will be prudent to create a new folder on your computer to store these scripts for easy recollection later. You will be submitting this program, so make sure to keep it.
-        	
-        \end{enumerate}
-        
-        \subsection*{Knight Rider}
-        Connect 8 more LEDs to the Arduino digital out pins and ground them with one resistor, like in Figure 3. Write a new Arduino script to approximate the behavior of the light in the beginning of the video below (so that the light shifts left and right at a constant speed). This program should be written with less than 20 lines in loop. Make sure to save this code, as you will be submitting it. You should have three separate programs saved so far. (\url{https://www.youtube.com/watch?v=FpyKlLuLbcs})
-        
-        \begin{figure}[h!]
-    	   **TODO: insert schematic and/or pic here for knight rider**
-    	   \caption{The Knight Rider circuit}
-    \end{figure}
-	
-	\section*{Deliverables}
-	Submit the following 3 deliverables to assignment 'Week 1 Postlab' on Canvas:
-	\begin{itemize}
-	    \item Screenshot of code for Arduino Blink with External LED (step no. FIXME)
-	    \item Screenshot of code for Knight Rider (step no. FIXME)
-	    \item Submit some kind of proof of discussion with partners?
-	\end{itemize}
-	
 \end{document}
 

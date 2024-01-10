@@ -8,7 +8,7 @@ latex: true
 ## Course Overview
 
 The goal of this class is to design, test, and build an actual
-``satellite'' system.  The point of this is to take a project from
+*satellite* system.  The point of this is to take a project from
 design through implementation, including thorough testing.  Students
 form teams of 5-6 people with diverse backgrounds to design a weather
 balloon sensor payload and position tracking system which will be
@@ -29,17 +29,15 @@ Tuesday/Thursday 12:30 - 2:30 PM
 
 2424 CSRB (Lab: B516 CSRB)
 
-##Instructor Information
+## Instructor Information
 
-Prof. Aaron Ridley
-
-ridley@umich.edu
+Prof: Aaron Ridley
 
 IA: Eric Andrechek
 
 contact over Slack as a primary means of communication
 
-##Course Objectives
+## Course Objectives
 
 The goal of our project is to take measurements with sensors of
 atmospheric pressure, temperature, humidity and wind speed from the
@@ -56,7 +54,7 @@ their payload train with Engin 100 student payloads.  Teams must plan
 to integrate up to four Engin 100 payloads into their final payload
 train on launch day.
 
-##Course Structure
+## Course Structure
 
 This class will have primarily lab sessions. I expect students to show
 up during class times to work with their fellow teammates. We will
@@ -70,7 +68,7 @@ shipping. If you absolutely HAVE to order something on your own
 here at the University or you will not be reimbursed.**
 
 
-##Schedule
+## Schedule
 
 - Second Tuesday in the semester (Jan. 23):
     1. Heritage and design report and schedule for lab completions due. Preliminary thoughts on FTU, main science payload, and
@@ -115,7 +113,7 @@ here at the University or you will not be reimbursed.**
     2. All equipment must be checked back in (in working condition).
     3. Lab spaces must be cleaned.
 
-##Grading
+## Grading
 
 The class will be graded using the following criteria:
 

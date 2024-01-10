@@ -158,54 +158,65 @@ case does not have to be opened.
 
 ## Flight Termination Unit Requirements
 
-\begin{itemize}
-  \item The FTU will be launched in its own structure, mounted below
+1. The FTU will be launched in its own structure, mounted below
     the balloon, but above the parachute on the payload train.
-  \item The working FTU must include a timer, a battery pack, and
-    whatever circuitry you need to initiated a timed burn of the
-    nichrome wire (or other technique) to cut down the package.
-    \begin{itemize}
-      \item The FTU could also be extremely sophisticated with a radio
-        (e.g., X-Bee) connected to the main science payload that can
-        trigger the flight termination. This could be triggered due to
-        going outside of a given lat/lon box, ascent rate too slow,
-        etc.
-    \end{itemize}
-  \item Power must be controlled by a remove before flight pin or a
+
+2. The working FTU must include a timer, a battery pack, and whatever
+    circuitry you need to initiated a timed burn of the nichrome wire
+    (or other technique) to cut down the package.  The FTU could also
+    be extremely sophisticated with a radio (e.g., X-Bee) connected to
+    the main science payload that can trigger the flight
+    termination. This could be triggered due to going outside of a
+    given lat/lon box, ascent rate too slow, etc.
+	
+3. Power must be controlled by a remove before flight pin or a
     switch so it can be initiated without opening the package at the
     launch site and remain on during the flight with no chance of it
     accidentally being turned off.
-  \item The battery should be sized to provide at least 2.0 hours of
+    
+4. The battery should be sized to provide at least 2.0 hours of
     power for the system, and be able to provide power to operate the
     termination mechanism, but should not be too over-powered due to
     weight.
-  \item Connection points to the payload train must be included in the
+    
+5. Connection points to the payload train must be included in the
     design, so that {\bf the package does not need to be opened at the
       launch site.}
-  \item The FTU needs to be robust against line stress, since the
+      
+6. The FTU needs to be robust against line stress, since the
     nichrome is easy to dislodge and/or break.
-  \item FTU must weigh less than 0.5 lbs.
-\end{itemize}
-
-\subsection{System-Level Requirements}
     
-The tracker and main science payload can be combined into one box or
-can be built in 2 separate boxes.  If they are together, a single
-battery pack and structure can be used. If a single payload is used,
-the weight is restricted to 1.5 lbs with an extra 0.5 lbs for two
-cameras.
+7. FTU must weigh less than 0.5 lbs.
+  
 
-\section{Lab Specifications}
+## Camera System
+
+Specifications on the camera system:
+
+1. Need at least two cameras pointing in orthogonal directions (e.g.,
+horizon and up towards balloon).
+
+2. Need to take video or high-quality images.
+
+3. Must be less than 1 pound.
+
+4. Must operate for at least 2 hours at external temperatures of -60C.
+
+5. It is desired that the camera system be contained in one box,
+preferably with a method for turning the system on without having to
+open the box.
+
+## Lab Specifications
 
 This class will have mostly lab sessions. I expect students to show up
 during class times to work with their fellow teammates. We will have
 weekly team meetings to make sure that the teams are keeping up with
 the plan.
 
-We will have to order things online. You should work with Aaron to put
-in orders.  He will consolidate the orders and try to minimize
-shipping. If you absolutely HAVE to order something on your own
-(highly discouraged!!!), the parts must be shipped to me/the class
+We will have to order things online. You should work with the teaching
+staff to put in orders.  He will consolidate the orders and try to
+minimize shipping. If you absolutely **HAVE** to order something on your
+own (highly discouraged!!!), the parts must be shipped to the climate and space research building
 here at the University or you will not be reimbursed. Pay attention to
 shipping costs! We do not want to pay outrageous shipping costs for
 last-minute orders!  Plan ahead!
@@ -214,55 +225,9 @@ The following list makes up the lab reports that you must complete in
 order to get a grade and launch, and in those labs, there are a number
 of requirements that need to be met:
 
-\subsection{Lab 1:  Microcontroller, Sensors, and Data Logging}
+- [Lab 1:  Microcontroller, Sensors, and Data Logging](Labs/lab01.md)
 
-{\bf Due by: Critical Design Review}
-
-\noindent
-{\bf Requirements:}
-
-\begin{itemize}
-   \item Microcontroller working with sensors (2xTemperature,
-     pressure, humidity, acceleration). The sensors should all be
-     polled at close to the same time to show that they are all
-     working together.
-    \item Lab should show wiring schematic. 
-    \item Lab should include preliminary calibration of sensors. 
-    \item Include calibration information for sensors, include plots
-      of the calibration curves, data used to verify calibration.
-    \item Microcontroller must write data to the data logger.
-    \item Lab should show pictures of breadboard, screenshots of the
-      readout of numbers reported from each sensor and plots of sensor
-      numbers plotted in MATLAB, python, excel, IDL, etc.
-    \item Lab should show plots of the data over time (2 hours minimum).
-    \item Microcontroller code should be included. 
-\end{itemize}
-
-\subsection{Lab 2:  Microcontroller + GPS}
-
-{\bf Due by: Critical Design Review}
-
-\noindent
-{\bf Requirements:}
-
-\begin{itemize}
-    \item Micro-controller working with the GPS, logging the data to
-      the data logger. This may be challenging if only using the GPS
-      on the tracker. The tracker may have to be modified to log the
-      data, or a separate GPS may have to be flown.
-    \item A program on a computer should be able to parse this data
-      and plot it in MATLAB, python, excel, IDL, etc.  You can make
-      great webpage that displays a google map.
-    \item Include working code in the report.
-    \item Sample data should be shown in the lab write up, along with
-      plots of location.
-    \item Lab should show wiring scheme.  
-    \item HINT: Tiny GPS will help prevent memory issues.
-    \item GPS data plotted on Google maps. Clearly label your start
-      and end points (use pins).
-   \item Lab should include a map that shows that you can walk or
-     drive around campus and get a map in Google that shows your path.
-\end{itemize}
+- [Lab 2:  Microcontroller + GPS](Labs/lab02.md)
 
 \subsection{Lab 3:  Tracker}
 

@@ -198,9 +198,9 @@ horizon and up towards balloon).
 
 2. Need to take video or high-quality images.
 
-3. Must be less than 1 pound.
+3. Must be less than 1 pound, preferably less than 0.5 lbs.
 
-4. Must operate for at least 2 hours at external temperatures of -60C.
+4. Must operate for at least 2 hours at external temperatures of -40C.
 
 5. It is desired that the camera system be contained in one box,
 preferably with a method for turning the system on without having to
@@ -233,121 +233,15 @@ of requirements that need to be met:
 
 - [Lab 4: Flight Termination Unit](Labs/lab04.md)
 
+- [Lab 6: PCB designs](Labs/lab06.md)
 
-\subsection{Lab 6: PCB design}
+- [Lab 7: Interface Control Document](Labs/lab07.md)
 
-{\bf Due by: Thursday before Spring Break}
+- [Lab 8:  Tracking Test Results](Labs/lab08.md)
 
-\noindent
-{\bf Requirements:}
+- [Lab 9:  Camera endurance and cold test](Labs/lab09.md)
 
-\begin{itemize}
-    \item Develop PCB board layout for the main payload, Trackuino,
-      and the FTU.
-    \item The payload PCB should incorporate the sensors, the data
-      logger, the micro-controller, the X-Bee (if used), the payload
-      and any supporting circuitry.
-    \item Nothing that costs more than \$20 should be soldered to the
-      PCB - headers should be mounted to the PCB and the components
-      should be put into the headers.
-    \item Lab should show pictures of the completed circuit board with
-      data showing that everything works ok on it.
-    \item All files needed to order PCBs must be reviewed by at least
-      2 other teams and delivered before class on the Thursday before
-      spring break.
-    \begin{itemize}
-        \item All independent boards should be combined into a single
-          PCB in order to minimize cost.
-    \end{itemize}
-\end{itemize}
-
-\subsection{Interface Control Document}
-
-{\bf Due by: March 17th}
-
-\noindent
-{\bf Requirements:}
-
-\begin{itemize}
-    \item Work with 3-4 ENGR100 teams to design interfaces between
-      their ride-share payloads and the payload train.
-    \item These teams will be given requirements with options and they
-      will write you a memo describing how they will be attaching to
-      the train and how they will meet the requirements.
-    \item You will verify that the design meets the requirement and
-      modify if you need to, creating a formal interface control
-      document.
-    \item On the Wednesday/Thursday before launch, you should meet
-      with the ENGR 100 teams to verify that they have complied with
-      the ICD.
-\end{itemize}
-
-\subsection{Lab 7:  Tracking Test Results}
-
-{\bf Due by: Flight Readiness Review}
-
-\noindent
-{\bf Requirements:}
-
-\begin{itemize}
-  \item At least two team members must be licensed Ham radio
-    technicians.
-  \item Demonstrate ability to set up ground station and attach it
-      to your car. Verify that at least two members of your group
-      understand the procedure to set up and work ground station.
-    \item Demonstrate MBuRST provided Micro-track working with ground
-      stations, broadcasting to APRS (using wifi or cell from the
-      ground station laptop).
-    \item Demonstrate your tracker communicating with the ground
-      station by including a number of packets transmitted to it from
-      screenshot on APRS.
-    \item Lab write-up should include screenshots from aprs.fi that
-      show that the Micro-track and tracker are broadcasting the
-      correct call sign and that the ground station is working for at
-      least 30 minutes while moving around in line of sight of
-      receiver.
-\end{itemize}
-
-\subsection{Lab 8:  Camera endurance and cold test}
-
-{\bf Due by: Flight Readiness Review}
-
-\noindent
-{\bf Requirements:}
-
-\begin{itemize}
-    \item Camera working and verified to work at $-40^\circ$
-    \item Measure battery lifetime prior to cold test, during cold
-      test, after cold test, report on performance.
-    \item The lab should show that the camera can work for at least 60
-      minutes at $-40^\circ$.
-\end{itemize}
-
-\subsection{Lab 9:  System Testing}
-
-{\bf Due by: Flight Readiness Review}
-
-\noindent
-{\bf Requirements:}
-
-\begin{itemize}
-    \item An end-to-end test needs to be completed on the complete
-      system, including cold testing ($-40^\circ$C for at least 2
-      hour) and endurance testing (operating for at least 3 hours).
-    \item 20 ft drop and kick test and fix anything that didn’t hold
-      up.
-    \item A car chase needs to be completed with results that show
-      that the complete system worked flawlessly during the entire
-      chase (this includes the ground station and all of the sensors).
-    \item Video demonstration of the FTU test.
-    \item You will not be allowed to launch until the tests are completed.
-    \item Tests {\bf must be completed at least 24 hours before
-      launch}, so they can be reviewed.
-    \item A spreadsheet providing information on masses of packages
-      must be provided.
-    \item Launch day predictions with launch and landind sites must be
-      provided.
-\end{itemize}
+- [Lab 10:  System Testing](Labs/lab10.md)
 
 \subsection{Lab 10: Final Report}
 

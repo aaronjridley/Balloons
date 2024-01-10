@@ -3,7 +3,9 @@
 
 ## Due by:
 
-Critical Design Review
+Prototype by Critical Design Review
+
+Final by Flight Readiness Review
 
 ## Requirements
 
@@ -25,7 +27,8 @@ Critical Design Review
       readout of numbers reported from each sensor and plots of sensor
       numbers plotted in MATLAB, python, excel, IDL, etc.
 
-- Lab should show plots of the data over time (2 hours minimum).
+- Lab should show plots of the data over time (2 hours minimum)
+  including cold chamber operational test.
 
 - Microcontroller code should be included. 
 

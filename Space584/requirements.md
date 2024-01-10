@@ -225,81 +225,14 @@ The following list makes up the lab reports that you must complete in
 order to get a grade and launch, and in those labs, there are a number
 of requirements that need to be met:
 
-- [Lab 1:  Microcontroller, Sensors, and Data Logging](Labs/lab01.md)
+- [Lab 1: Microcontroller, Sensors, and Data Logging](Labs/lab01.md)
 
-- [Lab 2:  Microcontroller + GPS](Labs/lab02.md)
+- [Lab 2: Microcontroller + GPS](Labs/lab02.md)
 
-\subsection{Lab 3:  Tracker}
+- [Lab 3: Tracker](Labs/lab03.md)
 
-{\bf Due by: Critical Design Review, finished tracker due by Flight
-  Readiness Review}
+- [Lab 4: Flight Termination Unit](Labs/lab04.md)
 
-\noindent
-{\bf Requirements:}
-
-\begin{itemize}
-    \item DO NOT operate transmitter without radio antenna. (Strongly)
-      Consider hot gluing antenna connections (GPS and transmitter) to
-      make them more robust.
-    \item Demonstrate that you have integrated your Trackuino (or
-      whatever radio system your team uses), soldered it together,
-      assembled in a structure with the GPS antenna point upward for
-      integration in to the payload train.
-    \item Tracker needs to reliably transmit GPS position to one of
-      the ground stations continuously for 30 minutes, and broadcasts
-      over APRS for 30 minutes (e.g. WXMU South Ann Arbor).
-    \item Lab should clearly demonstrate this through the use of
-      screenshots and/or videos.
-    \item It would be very nice (not required) to integrate Trackuino
-      (or other communication system) with sensor payload and transfer
-      data over APRS.  Data from sensors and GPS coordinates
-      transmitted over the radio to the ground station for a duration
-      of 30 minutes (once per minute or two). Lab should include
-      videos demonstrating functionality.
-      \begin{itemize}
-        \item This can be accomplished by adding a sensor stack onto
-          the Trackuino, routing the sensors outputs to the Arduino,
-          and altering the code to read, store, and transmitting the
-          data.
-        \item This saves a lot of weight on the payload, but may be
-          difficult, due to altering other people's design.
-      \end{itemize}
-\end{itemize}
-
-\subsection{Lab 4: Extra sensor/capability lab}
-
-{\bf Due by: Critical Design Review}
-
-\noindent
-{\bf Requirements:}
-
-\begin{itemize}
-   \item  Write up motivation for your sensor/capability choice.
-   \item Describe how it is integrated in the payload, calibrate it,
-     test it over its operating range, log data from it, and include a
-     wiring diagram for it.
-    \item The sensor should be working on a breadboard.
-    \item Follow same requirements for lab 1.
-\end{itemize}
-
-\subsection{Lab 5: Flight Termination Unit}
-
-{\bf Due by: Critical Design Review}
-
-\noindent
-{\bf Requirements:}
-
-\begin{itemize}
-    \item Develop protoboard for the FTU.
-    \item Demonstration should be a video that shows that something is
-      cut down after a set time from across the room.
-    \item This video should also confirm the timing is according to
-      the setting in the code.
-   \item Lab should show pictures of the completed circuit board with
-     data showing that everything works.
-    \item Include a hardware schematic and all code in your
-      submission.
-\end{itemize}
 
 \subsection{Lab 6: PCB design}
 

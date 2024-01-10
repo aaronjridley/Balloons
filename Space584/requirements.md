@@ -20,10 +20,35 @@ train on launch day.
 
 ## System Requirements
 
-The payload components you are responsible for designing, building,
-testing, and launching are: stand-alone Flight Termination Unit (FTU),
-a radio tracker (e.g., Trackuino), and main science payload with
-sensors.
+Each team will be responsible for creating:
+
+1. A sensor package that records data to an SD card.
+
+2. A camera payload.
+
+3. Three copies of a tracker.
+
+4. Three copies of a Primary Flight Termination Unit (FTU), micro FTU,
+or a ground station.
+
+Because we are desiring robustness and redundancy in the tracking, each team's
+tracking system needs to be a different technology.  The three technologies that
+we are desiring are:
+
+1. Communication through the APRS network, using a 144.29 MHz radio.
+
+2. Communication through a satellite communication system.
+
+3. Communication through a low power, analog, fox-hunt system.
+
+Each system also needs some way of cutting the balloon away from the
+main payload train (Primary FTU) and the individual packages from the
+payload train (micro FTUs).  One team will be responsible for the Primary
+FTUs and another team will be responsible for the micro FTUs.
+
+Each system also needs some way of getting the tracking data from the
+payloads and displaying it in a way that is helpful in the balloon
+chase. One team will be responsible for creating the ground stations.
 
 ## Satellite Tracker Requirements
 
@@ -156,18 +181,17 @@ case does not have to be opened.
     being subjected to extreme environments of acceleration and
     temperature.
 
-## Flight Termination Unit Requirements
+## Primary Flight Termination Unit Requirements
 
 1. The FTU will be launched in its own structure, mounted below
     the balloon, but above the parachute on the payload train.
 
-2. The working FTU must include a timer, a battery pack, and whatever
-    circuitry you need to initiated a timed burn of the nichrome wire
-    (or other technique) to cut down the package.  The FTU could also
-    be extremely sophisticated with a radio (e.g., X-Bee) connected to
-    the main science payload that can trigger the flight
-    termination. This could be triggered due to going outside of a
-    given lat/lon box, ascent rate too slow, etc.
+2. The working FTU must include a timer, a battery pack, a radio
+    receiver, and whatever circuitry you need to initiated a timed
+    burn of the nichrome wire (or other technique) to cut down the
+    package.  The FTU could be triggered due to time expiring, going
+    outside of a given lat/lon box, ascent rate too slow, by a ground
+    signal, etc.
 	
 3. Power must be controlled by a remove before flight pin or a
     switch so it can be initiated without opening the package at the
@@ -180,14 +204,44 @@ case does not have to be opened.
     weight.
     
 5. Connection points to the payload train must be included in the
-    design, so that {\bf the package does not need to be opened at the
-      launch site.}
+    design, so that **the package does not need to be opened at the
+    launch site.**
       
 6. The FTU needs to be robust against line stress, since the
     nichrome is easy to dislodge and/or break.
     
 7. FTU must weigh less than 0.5 lbs.
   
+## Micro Flight Termination Unit Requirements
+
+1. The micro-FTU will be the attachment point for all payloads, so that they
+   can all be cut down with a single signal from the ground.
+
+2. The working FTU must include a battery pack, a radio receiver, and
+    whatever circuitry you need to initiated a burn of the nichrome
+    wire (or other technique) to cut down the package.  The micro-FTU
+    should be triggered by sending an extremely simple tone signal.
+	
+3. Power must be controlled by an external switch so it can be
+   initiated without opening the package at the launch site and remain
+   on during the flight with no chance of it accidentally being turned
+   off.
+    
+4. The battery should be sized to provide at least 2.0 hours of power
+   for the system, and be able to provide power to operate the
+   termination mechanism, but should not be too over-powered due to
+   weight.
+    
+5. Connection points to the payload train must be included in the
+   design, so that **the package does not need to be opened at the
+   launch site.**
+      
+6. The micro FTU needs to be robust against line stress, since the
+    nichrome is easy to dislodge and/or break.
+    
+7. FTU must weigh less than 0.25 lbs.
+  
+(It is unclear if these requirements can be met at this time....)
 
 ## Camera System
 
@@ -196,7 +250,7 @@ Specifications on the camera system:
 1. Need at least two cameras pointing in orthogonal directions (e.g.,
 horizon and up towards balloon).
 
-2. Need to take video or high-quality images.
+2. Need to take video or high-quality images every few seconds.
 
 3. Must be less than 1 pound, preferably less than 0.5 lbs.
 
@@ -205,6 +259,23 @@ horizon and up towards balloon).
 5. It is desired that the camera system be contained in one box,
 preferably with a method for turning the system on without having to
 open the box.
+
+6. The camera system and the sensor system can be combined into one
+box if desired.
+
+7. A heater system can be designed to warm the cameras if desired.
+
+## Ground Station Requirements:
+
+1. Needs to contain a processing system, a display system, some type
+of internet connection system (e.g., cell-phone WiFi), a radio, a GPS,
+and a USB battery system that can be charged in the car, but can be
+run autonomously also.
+
+2. Needs to display the locations of the balloon(s) and ground
+station(s) all operating on our network.
+
+3. etc.
 
 ## Lab Specifications
 
@@ -231,7 +302,9 @@ of requirements that need to be met:
 
 - [Lab 3: Tracker](Labs/lab03.md)
 
-- [Lab 4: Flight Termination Unit](Labs/lab04.md)
+- [Lab 4: Flight Termination Units](Labs/lab04.md)
+
+- [Lab 5: Ground Stations](Labs/lab05.md)
 
 - [Lab 6: PCB designs](Labs/lab06.md)
 
@@ -243,24 +316,6 @@ of requirements that need to be met:
 
 - [Lab 10:  System Testing](Labs/lab10.md)
 
-\subsection{Lab 10: Final Report}
-
-{\bf Due by: day/time of final exam}
-
-\noindent
-{\bf Final report should contain the following:}
-
-\begin{itemize}
-    \item A terse summary of the system design
-    \item A summary of launch day activities
-\begin{itemize}
-        \item What worked and what did not?
-\end{itemize}
-    \item Map of balloon trajectory including google map and altitude profile
-    \item Plots of the data recovered and analysis of results
-    \item Video/images should be provided in a shared google drive
-\end{itemize}
-
-
+- [Lab 11: Final Report](Labs/lab11.md)
 
 \end{document}

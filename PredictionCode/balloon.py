@@ -391,7 +391,7 @@ def get_station(longitude, latitude):
     sDateHour = date.strftime('%Y.%m.%d.%H')
 
     if (MinDist == DistSave):
-        url = 'http://www.meteor.iastate.edu/~ckarsten/bufkit/data/nam/nam_'+stat+'.buf'
+        url = 'https://meteor.geol.iastate.edu/~ckarsten/bufkit/data/nam/nam_'+stat+'.buf'
 #        url = 'ftp://ftp.meteo.psu.edu/pub/bufkit/latest/nam_'+stat+'.buf'
     else:
         url = 'ftp://ftp.meteo.psu.edu/pub/bufkit/GFS/latest/gfs3_'+stat+'.buf'
@@ -403,7 +403,6 @@ def get_station(longitude, latitude):
     print(outfile)
 
     if (not os.path.isfile(outfile)):
-        # command = '/sw/bin/wget -O '+outfile+' '+url+' >& .log'
         command = '/opt/local/bin/curl -o '+outfile+' '+url+' >& .log.curl'
         print(command)
         os.system(command)
@@ -728,19 +727,19 @@ def write_html(args,AscentLongitudes,AscentLatitudes,AscentAltitudes,
     fpout.write("           new google.maps.Point(10, 34));\n")
     fpout.write(" \n")
     fpout.write("        var pinColorG = \"66FF66\";\n")
-    fpout.write("        var pinImageG = new google.maps.MarkerImage(\"http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|\" + pinColorG,\n")
+    fpout.write("        var pinImageG = new google.maps.MarkerImage(\"http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|\" + pinColorR,\n")
     fpout.write("           new google.maps.Size(21, 34),\n")
     fpout.write("           new google.maps.Point(0,0),\n")
     fpout.write("           new google.maps.Point(10, 34));\n")
     fpout.write(" \n")
     fpout.write("        var pinColorB = \"6666FF\";\n")
-    fpout.write("        var pinImageB = new google.maps.MarkerImage(\"http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|\" + pinColorB,\n")
+    fpout.write("        var pinImageB = new google.maps.MarkerImage(\"http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|\" + pinColorR,\n")
     fpout.write("           new google.maps.Size(21, 34),\n")
     fpout.write("           new google.maps.Point(0,0),\n")
     fpout.write("           new google.maps.Point(10, 34));\n")
     fpout.write(" \n")
     fpout.write("        var pinColorY = \"FFFF66\";\n")
-    fpout.write("        var pinImageY = new google.maps.MarkerImage(\"http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|\" + pinColorY,\n")
+    fpout.write("        var pinImageY = new google.maps.MarkerImage(\"http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|\" + pinColorR,\n")
     fpout.write("           new google.maps.Size(21, 34),\n")
     fpout.write("           new google.maps.Point(0,0),\n")
     fpout.write("           new google.maps.Point(10, 34));\n")
@@ -752,12 +751,12 @@ def write_html(args,AscentLongitudes,AscentLatitudes,AscentAltitudes,
     fpout.write("           new google.maps.Point(10, 34));\n")
     fpout.write(" \n")
     fpout.write("        var pinColorPi = \"FFC0C0\";\n")
-    fpout.write("        var pinImagePi = new google.maps.MarkerImage(\"http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|\" + pinColorPi,\n")
+    fpout.write("        var pinImagePi = new google.maps.MarkerImage(\"http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|\" + pinColorBl,\n")
     fpout.write("           new google.maps.Size(21, 34),\n")
     fpout.write("           new google.maps.Point(0,0),\n")
     fpout.write("           new google.maps.Point(10, 34));\n")
     fpout.write(" \n")
-    fpout.write("        var pinColorCy = \"C0C0FF\";\n")
+    fpout.write("        var pinColorCy = \"FFFFFF\";\n")
     fpout.write("        var pinImageCy = new google.maps.MarkerImage(\"http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|\" + pinColorCy,\n")
     fpout.write("           new google.maps.Size(21, 34),\n")
     fpout.write("           new google.maps.Point(0,0),\n")
@@ -900,7 +899,7 @@ def write_html(args,AscentLongitudes,AscentLatitudes,AscentAltitudes,
     fpout.write("\n")
     fpout.write("      var flightPathAscent = new google.maps.Polyline({\n")
     fpout.write("        path: AscentCoordinates,\n")
-    fpout.write("        strokeColor: \"\#FF0000\",\n")
+    fpout.write("        strokeColor: \"#FF0000\",\n")
     fpout.write("        strokeOpacity: 1.0,\n")
     fpout.write("        strokeWeight: 3\n")
     fpout.write("      });\n")
@@ -927,7 +926,7 @@ def write_html(args,AscentLongitudes,AscentLatitudes,AscentAltitudes,
     fpout.write("\n")
     fpout.write("      var flightPathDescent = new google.maps.Polyline({\n")
     fpout.write("        path: DescentCoordinates,\n")
-    fpout.write("        strokeColor: \"\#0000FF\",\n")
+    fpout.write("        strokeColor: \"#0000FF\",\n")
     fpout.write("        strokeOpacity: 1.0,\n")
     fpout.write("        strokeWeight: 3\n")
     fpout.write("      });\n")
@@ -978,7 +977,7 @@ def write_html(args,AscentLongitudes,AscentLatitudes,AscentAltitudes,
         fpout.write("\n")
         fpout.write("      var flightPathRealTime = new google.maps.Polyline({\n")
         fpout.write("        path: RealTimeCoordinates,\n")
-        fpout.write("        strokeColor: \"\#000000\",\n")
+        fpout.write("        strokeColor: \"#000000\",\n")
         fpout.write("        strokeOpacity: 1.0,\n")
         fpout.write("        strokeWeight: 3\n")
         fpout.write("      });\n")
